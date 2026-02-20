@@ -9,7 +9,6 @@
 
 <style>
 :root {
-  --sand: #e8d8b5;
   --ocean: #49b3c3;
   --deep-ocean: #1f7c8c;
   --accent-red: #e63946;
@@ -24,7 +23,10 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background: var(--sand);
+  background-image: url("sand_texture.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   overflow-x: hidden;
   color: #222;
 }
@@ -33,62 +35,66 @@ body {
 
 .hero {
   position: relative;
-  height: 100vh;
+  height: 75vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 25px;
   text-align: center;
-  background: var(--sand);
   overflow: hidden;
 }
 
-.hero-content {
-  z-index: 3;
+.logo {
+  width: 110px;
+  margin-bottom: 15px;
 }
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
+  font-size: 8rem;
   color: var(--accent-red);
 }
 
 .hero h2 {
-  margin-top: 10px;
-  font-size: 1rem;
+  margin-top: 8px;
+  font-size: 4rem;
   letter-spacing: 2px;
 }
 
 .hero p {
-  margin-top: 20px;
-  font-weight: 600;
+  margin-top: 18px;
+  font-size: 3rem;
+  font-weight: 800;
 }
 
-/* WAVE BACKGROUND */
+/* WAVE */
 
 .wave {
   position: absolute;
-  bottom: 0;
-  width: 200%;
-  height: 50%;
+  bottom: -20%;
+  width: 300%;
+  height: 120%;
   background: var(--ocean);
-  transform: translateY(40%);
-  transition: transform 0.2s ease-out;
-  border-top-left-radius: 50% 20%;
-  border-top-right-radius: 50% 20%;
+  border-top-left-radius: 60% 30%;
+  border-top-right-radius: 60% 30%;
+  transform: translateY(0%);
+  transition: transform 0.1s linear;
+  z-index: -1;
 }
 
 /* SCHEDULE SECTION */
 
 .schedule {
   background: var(--ocean);
-  padding: 40px 20px;
+  padding: 50px 20px;
   color: var(--white);
 }
 
 .schedule h3 {
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 1.5rem;
+  margin-bottom: 25px;
+  font-size: 1.4rem;
 }
 
 .performance-list {
@@ -97,24 +103,31 @@ body {
 
 .performance-list li {
   padding: 15px;
-  margin-bottom: 10px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 10px;
+  margin-bottom: 12px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 12px;
   font-weight: 600;
-  backdrop-filter: blur(5px);
+}
+
+.subheading {
+  font-size: 0.8rem;
+  font-weight: 400;
+  opacity: 0.85;
+  margin-top: 4px;
 }
 
 /* CONTACT SECTION */
 
 .contact {
   background: var(--deep-ocean);
-  padding: 40px 20px;
+  padding: 50px 20px;
   text-align: center;
   color: white;
 }
 
 .contact h4 {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
 }
 
 .buttons {
@@ -124,7 +137,7 @@ body {
 }
 
 .btn {
-  padding: 12px 20px;
+  padding: 12px 22px;
   border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
@@ -142,7 +155,7 @@ body {
 }
 
 .btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 </style>
 </head>
@@ -150,46 +163,45 @@ body {
 <body>
 
 <section class="hero">
-  <div class="hero-content">
-    <h1>SPRING 26 SHOWCASE</h1>
-    <h2>THE HOTTEST PERFORMANCES IN THE UNIVERSE</h2>
-    <p>February 21 · 7:30 PM<br>WPU Assembly Room</p>
-  </div>
+  <img src="popcorn.png" alt="Popcorn Logo" class="logo">
+  <h1>SPRING 26 SHOWCASE</h1>
+  <p>February 21 · 7:30 PM<br>WPU Assembly Room</p>
   <div class="wave" id="wave"></div>
 </section>
 
 <section class="schedule">
   <h3>Performance Schedule</h3>
   <ul class="performance-list">
-    <li>Performance 1</li>
-    <li>Performance 2</li>
-    <li>Performance 3</li>
-    <li>Performance 4</li>
-    <li>Performance 5</li>
-    <li>Performance 6</li>
-    <li>Performance 7</li>
-    <li>Performance 8</li>
-    <li>Performance 9</li>
-    <li>Performance 10</li>
-    <li>Performance 11</li>
-    <li>Performance 12</li>
-    <li>Performance 13</li>
-    <li>Performance 14</li>
-    <li>Performance 15</li>
-    <li>Performance 16</li>
-    <li>Performance 17</li>
-    <li>Performance 18</li>
-    <li>Performance 19</li>
-    <li>Performance 20</li>
-    <li>Performance 21</li>
+    <li>Focus</li>
+    <li>Bitch Better Have My Money</li>
+    <li>Body</li>
+    <li>Mona Lisa</li>
+    <li>You Should See Me in a Crown</li>
+    <li>Dirty Work<div class="subheading">FRESA</div></li>
+    <li>Like Jennie<div class="subheading">Aileen</div></li>
+    <li>Little Miss</li>
+    <li>Loco<div class="subheading">Cupid</div></li>
+    <li>Ditto</li>
+    <li>XOXZ</li>
+    <li>Antifragile<div class="subheading">Cupid</div></li>
+    <li>Go</li>
+    <li>Mashup - Soaked + Telephone</li>
+    <li>Baila Conmigo<div class="subheading">KPDC</div></li>
+    <li>Aint My Fault</li>
+    <li>Work</li>
+    <li>ETA</li>
+    <li>Whiplash</li>
+    <li>Famous</li>
+    <li>Internet Girl</li>
+    <li>Like Jennie<div class="subheading">Jenny</div></li>
   </ul>
 </section>
 
 <section class="contact">
   <h4>Contact Us or Check Us Out!</h4>
   <div class="buttons">
-    <a href="#" class="btn instagram">Instagram</a>
-    <a href="#" class="btn tiktok">TikTok</a>
+    <a href="https://www.instagram.com/popcorn_atpitt/" class="btn instagram">Instagram</a>
+    <a href="https://www.tiktok.com/@popcornatpitt" class="btn tiktok">TikTok</a>
   </div>
 </section>
 
@@ -197,8 +209,8 @@ body {
 const wave = document.getElementById("wave");
 
 window.addEventListener("scroll", () => {
-  let scrollPosition = window.scrollY;
-  wave.style.transform = `translateY(${40 - scrollPosition * 0.1}%)`;
+  const scroll = window.scrollY;
+  wave.style.transform = `translateY(${scroll * 0.05}px)`;
 });
 </script>
 
