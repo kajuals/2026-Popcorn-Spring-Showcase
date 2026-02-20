@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spring 26 Showcase</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --sand: #e8d8b5;
+  --ocean: #49b3c3;
+  --deep-ocean: #1f7c8c;
+  --accent-red: #e63946;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--sand);
+  overflow-x: hidden;
+  color: #222;
+}
+
+/* HERO SECTION */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--sand);
+  overflow: hidden;
+}
+
+.hero-content {
+  z-index: 3;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--accent-red);
+}
+
+.hero h2 {
+  margin-top: 10px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+/* WAVE BACKGROUND */
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 50%;
+  background: var(--ocean);
+  transform: translateY(40%);
+  transition: transform 0.2s ease-out;
+  border-top-left-radius: 50% 20%;
+  border-top-right-radius: 50% 20%;
+}
+
+/* SCHEDULE SECTION */
+
+.schedule {
+  background: var(--ocean);
+  padding: 40px 20px;
+  color: var(--white);
+}
+
+.schedule h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.performance-list {
+  list-style: none;
+}
+
+.performance-list li {
+  padding: 15px;
+  margin-bottom: 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  font-weight: 600;
+  backdrop-filter: blur(5px);
+}
+
+/* CONTACT SECTION */
+
+.contact {
+  background: var(--deep-ocean);
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+}
+
+.contact h4 {
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.instagram {
+  background: var(--accent-red);
+  color: white;
+}
+
+.tiktok {
+  background: black;
+  color: white;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>SPRING 26 SHOWCASE</h1>
+    <h2>THE HOTTEST PERFORMANCES IN THE UNIVERSE</h2>
+    <p>February 21 · 7:30 PM<br>WPU Assembly Room</p>
+  </div>
+  <div class="wave" id="wave"></div>
+</section>
+
+<section class="schedule">
+  <h3>Performance Schedule</h3>
+  <ul class="performance-list">
+    <li>Performance 1</li>
+    <li>Performance 2</li>
+    <li>Performance 3</li>
+    <li>Performance 4</li>
+    <li>Performance 5</li>
+    <li>Performance 6</li>
+    <li>Performance 7</li>
+    <li>Performance 8</li>
+    <li>Performance 9</li>
+    <li>Performance 10</li>
+    <li>Performance 11</li>
+    <li>Performance 12</li>
+    <li>Performance 13</li>
+    <li>Performance 14</li>
+    <li>Performance 15</li>
+    <li>Performance 16</li>
+    <li>Performance 17</li>
+    <li>Performance 18</li>
+    <li>Performance 19</li>
+    <li>Performance 20</li>
+    <li>Performance 21</li>
+  </ul>
+</section>
+
+<section class="contact">
+  <h4>Contact Us or Check Us Out!</h4>
+  <div class="buttons">
+    <a href="#" class="btn instagram">Instagram</a>
+    <a href="#" class="btn tiktok">TikTok</a>
+  </div>
+</section>
+
+<script>
+const wave = document.getElementById("wave");
+
+window.addEventListener("scroll", () => {
+  let scrollPosition = window.scrollY;
+  wave.style.transform = `translateY(${40 - scrollPosition * 0.1}%)`;
+});
+</script>
+
+</body>
+</html>
