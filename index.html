@@ -56,30 +56,25 @@ body {
   color: var(--accent-red);
 }
 
-.hero h2 {
-  margin-top: 8px;
-  font-size: 0.95rem;
-  letter-spacing: 2px;
-}
-
 .hero p {
   margin-top: 18px;
   font-weight: 800;
 }
 
-/* WAVE */
+/* PNG WAVE */
 
 .wave {
   position: absolute;
-  bottom: -50%;
-  width: 300%;
-  height: 120%;
-  background: var(--ocean);
-  border-top-left-radius: 60% 30%;
-  border-top-right-radius: 60% 30%;
-  transform: translateY(0%);
-  transition: transform 0.1s linear;
+  bottom: -5%;
+  left: 0;
+  width: 100%;
   z-index: -1;
+  pointer-events: none;
+}
+
+.wave img {
+  width: 100%;
+  display: block;
 }
 
 /* SCHEDULE SECTION */
@@ -165,7 +160,11 @@ body {
   <img src="popcorn.png" alt="Popcorn Logo" class="logo">
   <h1>SPRING 26 SHOWCASE</h1>
   <p>February 21 · 7:30 PM<br>WPU Assembly Room</p>
-  <div class="wave" id="wave"></div>
+
+  <!-- PNG WAVE HERE -->
+  <div class="wave" id="wave">
+    <img src="wave_texture.png" alt="Wave">
+  </div>
 </section>
 
 <section class="schedule">
@@ -199,8 +198,8 @@ body {
 <section class="contact">
   <h4>Contact Us or Check Us Out!</h4>
   <div class="buttons">
-    <a href="https://www.instagram.com/popcorn_atpitt/" class="btn instagram">Instagram</a>
-    <a href="https://www.tiktok.com/@popcornatpitt" class="btn tiktok">TikTok</a>
+    <a href="https://www.instagram.com/popcorn_atpitt/" class="btn instagram" target="_blank">Instagram</a>
+    <a href="https://www.tiktok.com/@popcornatpitt" class="btn tiktok" target="_blank">TikTok</a>
   </div>
 </section>
 
@@ -209,7 +208,7 @@ const wave = document.getElementById("wave");
 
 window.addEventListener("scroll", () => {
   const scroll = window.scrollY;
-  wave.style.transform = `translateY(${scroll * 0.05}px)`;
+  wave.style.transform = `translateY(${scroll * 0.1}px)`;
 });
 </script>
 
